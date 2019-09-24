@@ -13,7 +13,7 @@ export const nativeObserve = (
     };
     const window = Dimensions.get('screen');
     const isVisible =
-      state.rectBottom != 0 &&
+      state.rectBottom !== 0 &&
       state.rectTop >= 0 &&
       state.rectBottom <= window.height &&
       state.rectWidth > 0 &&

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import {
   useState,
   useEffect,
@@ -8,14 +8,6 @@ import {
   useCallback,
 } from 'react';
 import { observe } from './observer';
-
-export const Thing = () => {
-  return (
-    <View>
-      <Text>the snozzberries taste like snozzberries</Text>
-    </View>
-  );
-};
 
 export function useIsInViewPortEffect(
   ref: React.MutableRefObject<View | HTMLDivElement | null>,

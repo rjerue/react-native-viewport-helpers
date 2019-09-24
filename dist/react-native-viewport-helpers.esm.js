@@ -1,14 +1,28 @@
-import { createElement, useState, useCallback, useLayoutEffect, useEffect } from 'react';
-import { View, Text } from 'react-native';
-import { nativeObserve } from 'nativeObserver';
+import { useState, useCallback, useLayoutEffect, useEffect } from 'react';
+import { Dimensions } from 'react-native';
+
+var nativeObserve = function nativeObserve(ref, wasVisible, setIsVisible) {
+  ref.measure(function (_x, _y, width, height, pageX, pageY) {
+    var state = {
+      rectTop: pageY,
+      rectBottom: pageY + height,
+      rectWidth: pageX + width
+    };
+    var window = Dimensions.get('screen');
+    var isVisible = state.rectBottom !== 0 && state.rectTop >= 0 && state.rectBottom <= window.height && state.rectWidth > 0 && state.rectWidth <= window.width;
+
+    if (wasVisible !== isVisible) {
+      setIsVisible(function () {
+        return isVisible;
+      });
+    }
+  });
+};
 
 var observe = function observe(ref, isVisible, setIsVisible) {
   nativeObserve(ref, isVisible, setIsVisible);
 };
 
-var Thing = function Thing() {
-  return createElement(View, null, createElement(Text, null, "the snozzberries taste like snozzberries"));
-};
 function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
   if (onVisible === void 0) {
     onVisible = function onVisible() {};
@@ -64,5 +78,5 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
   return isVisible;
 }
 
-export { Thing, useIsInViewPortEffect };
+export { useIsInViewPortEffect };
 //# sourceMappingURL=react-native-viewport-helpers.esm.js.map

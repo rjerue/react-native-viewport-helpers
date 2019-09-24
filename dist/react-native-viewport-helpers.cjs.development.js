@@ -1,16 +1,30 @@
 'use strict';
 
-var React = require('react');
+var react = require('react');
 var reactNative = require('react-native');
-var nativeObserver = require('nativeObserver');
+
+var nativeObserve = function nativeObserve(ref, wasVisible, setIsVisible) {
+  ref.measure(function (_x, _y, width, height, pageX, pageY) {
+    var state = {
+      rectTop: pageY,
+      rectBottom: pageY + height,
+      rectWidth: pageX + width
+    };
+    var window = reactNative.Dimensions.get('screen');
+    var isVisible = state.rectBottom !== 0 && state.rectTop >= 0 && state.rectBottom <= window.height && state.rectWidth > 0 && state.rectWidth <= window.width;
+
+    if (wasVisible !== isVisible) {
+      setIsVisible(function () {
+        return isVisible;
+      });
+    }
+  });
+};
 
 var observe = function observe(ref, isVisible, setIsVisible) {
-  nativeObserver.nativeObserve(ref, isVisible, setIsVisible);
+  nativeObserve(ref, isVisible, setIsVisible);
 };
 
-var Thing = function Thing() {
-  return React.createElement(reactNative.View, null, React.createElement(reactNative.Text, null, "the snozzberries taste like snozzberries"));
-};
 function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
   if (onVisible === void 0) {
     onVisible = function onVisible() {};
@@ -28,22 +42,22 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
     delay = 500;
   }
 
-  var _useState = React.useState(null),
+  var _useState = react.useState(null),
       interval = _useState[0],
       setVPInverval = _useState[1];
 
-  var _useState2 = React.useState(false),
+  var _useState2 = react.useState(false),
       isVisible = _useState2[0],
       setIsVisible = _useState2[1];
 
-  var clear = React.useCallback(function () {
+  var clear = react.useCallback(function () {
     if (interval) {
       clearInterval(interval);
     }
 
     setInterval(null);
   }, []);
-  React.useLayoutEffect(function () {
+  react.useLayoutEffect(function () {
     if (disabled) {
       return clear;
     }
@@ -57,7 +71,7 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
     }, delay));
     return clear;
   }, [ref, disabled, delay].concat(dependencies));
-  React.useEffect(function () {
+  react.useEffect(function () {
     if (isVisible) {
       var effect = onVisible();
       return effect;
@@ -66,6 +80,5 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
   return isVisible;
 }
 
-exports.Thing = Thing;
 exports.useIsInViewPortEffect = useIsInViewPortEffect;
 //# sourceMappingURL=react-native-viewport-helpers.cjs.development.js.map
