@@ -68429,50 +68429,22 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
         return;
       }
 
-      if (ref.current.measure) {
-        ref.current.measure(function (x, y, width, height, pageX, pageY) {
-          var state = {
-            rectTop: pageY,
-            rectBottom: pageY + height,
-            rectWidth: pageX + width
-          };
-
-          var window = _reactNative.Dimensions.get('screen');
-
-          var isVisible = state.rectBottom != 0 && state.rectTop >= 0 && state.rectBottom <= window.height && state.rectWidth > 0 && state.rectWidth <= window.width;
-          setIsVisible(function () {
-            return isVisible;
-          });
-        });
-      } else {
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting && !isVisible) {
-              setIsVisible(function () {
-                return true;
-              });
-            } else if (isVisible) {
-              setIsVisible(function () {
-                return false;
-              });
-            }
-          });
-        }, {
-          threshold: [1]
-        });
-        observer.observe(ref.current);
-      }
-    }, delay));
-    return clear;
-  }, (0, _tslib.__spreadArrays)([ref, disabled, delay], dependencies));
-  (0, React.useEffect)(function () {
-    if (isVisible) {
-      var effect = onVisible();
-      return effect;
-    }
-  }, [isVisible]);
-  return isVisible;
+      observe(ref.current, isVisible, setIsVisible);
+    }));
+  }, delay);
+  ;
+  return clear;
 }
+
+(0, _tslib.__spreadArrays)([ref, disabled, delay], dependencies);
+;
+(0, React.useEffect)(function () {
+  if (isVisible) {
+    var effect = onVisible();
+    return effect;
+  }
+}, [isVisible]);
+return isVisible;
 },{"tslib":"../node_modules/tslib/tslib.es6.js","react":"../node_modules/react/index.js","react-native":"../node_modules/react-native-web/dist/index.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
