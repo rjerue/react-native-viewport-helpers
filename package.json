@@ -1,0 +1,46 @@
+{
+  "name": "react-native-viewport-helpers",
+  "license": "MIT",
+  "repository": "https://github.com/rjerue/react-native-viewport-helpers",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/react-native-viewport-helpers.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom",
+    "lint": "tsdx lint"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint && tsdx build && git add ."
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-native": "^0.60.15",
+    "husky": "^3.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-native": "^0.60.5",
+    "react-native-web": "^0.11.7",
+    "tsdx": "^0.9.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.3"
+  }
+}
