@@ -25,7 +25,15 @@ var observe = function observe(ref, isVisible, setIsVisible) {
   nativeObserve(ref, isVisible, setIsVisible);
 };
 
-function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
+/**
+ * Hook to run when ref is in view
+ * @param ref Ref to be in view
+ * @param onVisible Effect to run when in view
+ * @param dependencies Dependencies for the hook
+ * @param delay delay to poll on, by default 500ms
+ */
+
+function useIsInViewPortEffect(ref, onVisible, dependencies, delay) {
   if (onVisible === void 0) {
     onVisible = function onVisible() {};
   }
@@ -34,17 +42,13 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
     dependencies = [];
   }
 
-  if (disabled === void 0) {
-    disabled = false;
-  }
-
   if (delay === void 0) {
     delay = 500;
   }
 
   var _useState = react.useState(null),
       interval = _useState[0],
-      setVPInverval = _useState[1];
+      setVPInterval = _useState[1];
 
   var _useState2 = react.useState(false),
       isVisible = _useState2[0],
@@ -55,14 +59,10 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
       clearInterval(interval);
     }
 
-    setInterval(null);
-  }, []);
+    setVPInterval(null);
+  }, [interval]);
   react.useLayoutEffect(function () {
-    if (disabled) {
-      return clear;
-    }
-
-    setVPInverval(setInterval(function () {
+    setVPInterval(setInterval(function () {
       if (!ref.current) {
         return;
       }
@@ -70,7 +70,7 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
       observe(ref.current, isVisible, setIsVisible);
     }, delay));
     return clear;
-  }, [ref, disabled, delay].concat(dependencies));
+  }, [ref, delay, isVisible].concat(dependencies));
   react.useEffect(function () {
     if (isVisible) {
       var effect = onVisible();

@@ -68362,30 +68362,65 @@ var _VibrationIOS = _interopRequireDefault(require("./exports/VibrationIOS"));
 var _DeviceEventEmitter = _interopRequireDefault(require("./exports/DeviceEventEmitter"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./exports/createElement":"../node_modules/react-native-web/dist/exports/createElement/index.js","./exports/findNodeHandle":"../node_modules/react-native-web/dist/exports/findNodeHandle/index.js","./exports/processColor":"../node_modules/react-native-web/dist/exports/processColor/index.js","./exports/render":"../node_modules/react-native-web/dist/exports/render/index.js","./exports/unmountComponentAtNode":"../node_modules/react-native-web/dist/exports/unmountComponentAtNode/index.js","./exports/NativeModules":"../node_modules/react-native-web/dist/exports/NativeModules/index.js","./exports/TextPropTypes":"../node_modules/react-native-web/dist/exports/TextPropTypes/index.js","./exports/ViewPropTypes":"../node_modules/react-native-web/dist/exports/ViewPropTypes/index.js","./exports/AccessibilityInfo":"../node_modules/react-native-web/dist/exports/AccessibilityInfo/index.js","./exports/Alert":"../node_modules/react-native-web/dist/exports/Alert/index.js","./exports/Animated":"../node_modules/react-native-web/dist/exports/Animated/index.js","./exports/AppRegistry":"../node_modules/react-native-web/dist/exports/AppRegistry/index.js","./exports/AppState":"../node_modules/react-native-web/dist/exports/AppState/index.js","./exports/AsyncStorage":"../node_modules/react-native-web/dist/exports/AsyncStorage/index.js","./exports/BackHandler":"../node_modules/react-native-web/dist/exports/BackHandler/index.js","./exports/Clipboard":"../node_modules/react-native-web/dist/exports/Clipboard/index.js","./exports/DeviceInfo":"../node_modules/react-native-web/dist/exports/DeviceInfo/index.js","./exports/Dimensions":"../node_modules/react-native-web/dist/exports/Dimensions/index.js","./exports/Easing":"../node_modules/react-native-web/dist/exports/Easing/index.js","./exports/I18nManager":"../node_modules/react-native-web/dist/exports/I18nManager/index.js","./exports/Keyboard":"../node_modules/react-native-web/dist/exports/Keyboard/index.js","./exports/InteractionManager":"../node_modules/react-native-web/dist/exports/InteractionManager/index.js","./exports/LayoutAnimation":"../node_modules/react-native-web/dist/exports/LayoutAnimation/index.js","./exports/Linking":"../node_modules/react-native-web/dist/exports/Linking/index.js","./exports/NativeEventEmitter":"../node_modules/react-native-web/dist/exports/NativeEventEmitter/index.js","./exports/NetInfo":"../node_modules/react-native-web/dist/exports/NetInfo/index.js","./exports/PanResponder":"../node_modules/react-native-web/dist/exports/PanResponder/index.js","./exports/PixelRatio":"../node_modules/react-native-web/dist/exports/PixelRatio/index.js","./exports/Platform":"../node_modules/react-native-web/dist/exports/Platform/index.js","./exports/Share":"../node_modules/react-native-web/dist/exports/Share/index.js","./exports/StyleSheet":"../node_modules/react-native-web/dist/exports/StyleSheet/index.js","./exports/UIManager":"../node_modules/react-native-web/dist/exports/UIManager/index.js","./exports/Vibration":"../node_modules/react-native-web/dist/exports/Vibration/index.js","./exports/ActivityIndicator":"../node_modules/react-native-web/dist/exports/ActivityIndicator/index.js","./exports/Button":"../node_modules/react-native-web/dist/exports/Button/index.js","./exports/CheckBox":"../node_modules/react-native-web/dist/exports/CheckBox/index.js","./exports/FlatList":"../node_modules/react-native-web/dist/exports/FlatList/index.js","./exports/Image":"../node_modules/react-native-web/dist/exports/Image/index.js","./exports/ImageBackground":"../node_modules/react-native-web/dist/exports/ImageBackground/index.js","./exports/KeyboardAvoidingView":"../node_modules/react-native-web/dist/exports/KeyboardAvoidingView/index.js","./exports/ListView":"../node_modules/react-native-web/dist/exports/ListView/index.js","./exports/Modal":"../node_modules/react-native-web/dist/exports/Modal/index.js","./exports/Picker":"../node_modules/react-native-web/dist/exports/Picker/index.js","./exports/ProgressBar":"../node_modules/react-native-web/dist/exports/ProgressBar/index.js","./exports/RefreshControl":"../node_modules/react-native-web/dist/exports/RefreshControl/index.js","./exports/SafeAreaView":"../node_modules/react-native-web/dist/exports/SafeAreaView/index.js","./exports/ScrollView":"../node_modules/react-native-web/dist/exports/ScrollView/index.js","./exports/SectionList":"../node_modules/react-native-web/dist/exports/SectionList/index.js","./exports/Slider":"../node_modules/react-native-web/dist/exports/Slider/index.js","./exports/StatusBar":"../node_modules/react-native-web/dist/exports/StatusBar/index.js","./exports/SwipeableFlatList":"../node_modules/react-native-web/dist/exports/SwipeableFlatList/index.js","./exports/SwipeableListView":"../node_modules/react-native-web/dist/exports/SwipeableListView/index.js","./exports/Switch":"../node_modules/react-native-web/dist/exports/Switch/index.js","./exports/Text":"../node_modules/react-native-web/dist/exports/Text/index.js","./exports/TextInput":"../node_modules/react-native-web/dist/exports/TextInput/index.js","./exports/Touchable":"../node_modules/react-native-web/dist/exports/Touchable/index.js","./exports/TouchableHighlight":"../node_modules/react-native-web/dist/exports/TouchableHighlight/index.js","./exports/TouchableNativeFeedback":"../node_modules/react-native-web/dist/exports/TouchableNativeFeedback/index.js","./exports/TouchableOpacity":"../node_modules/react-native-web/dist/exports/TouchableOpacity/index.js","./exports/TouchableWithoutFeedback":"../node_modules/react-native-web/dist/exports/TouchableWithoutFeedback/index.js","./exports/View":"../node_modules/react-native-web/dist/exports/View/index.js","./exports/VirtualizedList":"../node_modules/react-native-web/dist/exports/VirtualizedList/index.js","./exports/YellowBox":"../node_modules/react-native-web/dist/exports/YellowBox/index.js","./exports/ColorPropType":"../node_modules/react-native-web/dist/exports/ColorPropType/index.js","./exports/EdgeInsetsPropType":"../node_modules/react-native-web/dist/exports/EdgeInsetsPropType/index.js","./exports/PointPropType":"../node_modules/react-native-web/dist/exports/PointPropType/index.js","./exports/DatePickerIOS":"../node_modules/react-native-web/dist/exports/DatePickerIOS/index.js","./exports/DrawerLayoutAndroid":"../node_modules/react-native-web/dist/exports/DrawerLayoutAndroid/index.js","./exports/ImageEditor":"../node_modules/react-native-web/dist/exports/ImageEditor/index.js","./exports/ImageStore":"../node_modules/react-native-web/dist/exports/ImageStore/index.js","./exports/InputAccessoryView":"../node_modules/react-native-web/dist/exports/InputAccessoryView/index.js","./exports/MaskedViewIOS":"../node_modules/react-native-web/dist/exports/MaskedViewIOS/index.js","./exports/NavigatorIOS":"../node_modules/react-native-web/dist/exports/NavigatorIOS/index.js","./exports/PickerIOS":"../node_modules/react-native-web/dist/exports/PickerIOS/index.js","./exports/ProgressBarAndroid":"../node_modules/react-native-web/dist/exports/ProgressBarAndroid/index.js","./exports/ProgressViewIOS":"../node_modules/react-native-web/dist/exports/ProgressViewIOS/index.js","./exports/SegmentedControlIOS":"../node_modules/react-native-web/dist/exports/SegmentedControlIOS/index.js","./exports/SnapshotViewIOS":"../node_modules/react-native-web/dist/exports/SnapshotViewIOS/index.js","./exports/TabBarIOS":"../node_modules/react-native-web/dist/exports/TabBarIOS/index.js","./exports/ToastAndroid":"../node_modules/react-native-web/dist/exports/ToastAndroid/index.js","./exports/ToolbarAndroid":"../node_modules/react-native-web/dist/exports/ToolbarAndroid/index.js","./exports/ViewPagerAndroid":"../node_modules/react-native-web/dist/exports/ViewPagerAndroid/index.js","./exports/WebView":"../node_modules/react-native-web/dist/exports/WebView/index.js","./exports/ActionSheetIOS":"../node_modules/react-native-web/dist/exports/ActionSheetIOS/index.js","./exports/AlertIOS":"../node_modules/react-native-web/dist/exports/AlertIOS/index.js","./exports/CameraRoll":"../node_modules/react-native-web/dist/exports/CameraRoll/index.js","./exports/DatePickerAndroid":"../node_modules/react-native-web/dist/exports/DatePickerAndroid/index.js","./exports/ImagePickerIOS":"../node_modules/react-native-web/dist/exports/ImagePickerIOS/index.js","./exports/PermissionsAndroid":"../node_modules/react-native-web/dist/exports/PermissionsAndroid/index.js","./exports/PushNotificationIOS":"../node_modules/react-native-web/dist/exports/PushNotificationIOS/index.js","./exports/Settings":"../node_modules/react-native-web/dist/exports/Settings/index.js","./exports/StatusBarIOS":"../node_modules/react-native-web/dist/exports/StatusBarIOS/index.js","./exports/Systrace":"../node_modules/react-native-web/dist/exports/Systrace/index.js","./exports/TimePickerAndroid":"../node_modules/react-native-web/dist/exports/TimePickerAndroid/index.js","./exports/TVEventHandler":"../node_modules/react-native-web/dist/exports/TVEventHandler/index.js","./exports/VibrationIOS":"../node_modules/react-native-web/dist/exports/VibrationIOS/index.js","./exports/DeviceEventEmitter":"../node_modules/react-native-web/dist/exports/DeviceEventEmitter/index.js"}],"../src/index.tsx":[function(require,module,exports) {
+},{"./exports/createElement":"../node_modules/react-native-web/dist/exports/createElement/index.js","./exports/findNodeHandle":"../node_modules/react-native-web/dist/exports/findNodeHandle/index.js","./exports/processColor":"../node_modules/react-native-web/dist/exports/processColor/index.js","./exports/render":"../node_modules/react-native-web/dist/exports/render/index.js","./exports/unmountComponentAtNode":"../node_modules/react-native-web/dist/exports/unmountComponentAtNode/index.js","./exports/NativeModules":"../node_modules/react-native-web/dist/exports/NativeModules/index.js","./exports/TextPropTypes":"../node_modules/react-native-web/dist/exports/TextPropTypes/index.js","./exports/ViewPropTypes":"../node_modules/react-native-web/dist/exports/ViewPropTypes/index.js","./exports/AccessibilityInfo":"../node_modules/react-native-web/dist/exports/AccessibilityInfo/index.js","./exports/Alert":"../node_modules/react-native-web/dist/exports/Alert/index.js","./exports/Animated":"../node_modules/react-native-web/dist/exports/Animated/index.js","./exports/AppRegistry":"../node_modules/react-native-web/dist/exports/AppRegistry/index.js","./exports/AppState":"../node_modules/react-native-web/dist/exports/AppState/index.js","./exports/AsyncStorage":"../node_modules/react-native-web/dist/exports/AsyncStorage/index.js","./exports/BackHandler":"../node_modules/react-native-web/dist/exports/BackHandler/index.js","./exports/Clipboard":"../node_modules/react-native-web/dist/exports/Clipboard/index.js","./exports/DeviceInfo":"../node_modules/react-native-web/dist/exports/DeviceInfo/index.js","./exports/Dimensions":"../node_modules/react-native-web/dist/exports/Dimensions/index.js","./exports/Easing":"../node_modules/react-native-web/dist/exports/Easing/index.js","./exports/I18nManager":"../node_modules/react-native-web/dist/exports/I18nManager/index.js","./exports/Keyboard":"../node_modules/react-native-web/dist/exports/Keyboard/index.js","./exports/InteractionManager":"../node_modules/react-native-web/dist/exports/InteractionManager/index.js","./exports/LayoutAnimation":"../node_modules/react-native-web/dist/exports/LayoutAnimation/index.js","./exports/Linking":"../node_modules/react-native-web/dist/exports/Linking/index.js","./exports/NativeEventEmitter":"../node_modules/react-native-web/dist/exports/NativeEventEmitter/index.js","./exports/NetInfo":"../node_modules/react-native-web/dist/exports/NetInfo/index.js","./exports/PanResponder":"../node_modules/react-native-web/dist/exports/PanResponder/index.js","./exports/PixelRatio":"../node_modules/react-native-web/dist/exports/PixelRatio/index.js","./exports/Platform":"../node_modules/react-native-web/dist/exports/Platform/index.js","./exports/Share":"../node_modules/react-native-web/dist/exports/Share/index.js","./exports/StyleSheet":"../node_modules/react-native-web/dist/exports/StyleSheet/index.js","./exports/UIManager":"../node_modules/react-native-web/dist/exports/UIManager/index.js","./exports/Vibration":"../node_modules/react-native-web/dist/exports/Vibration/index.js","./exports/ActivityIndicator":"../node_modules/react-native-web/dist/exports/ActivityIndicator/index.js","./exports/Button":"../node_modules/react-native-web/dist/exports/Button/index.js","./exports/CheckBox":"../node_modules/react-native-web/dist/exports/CheckBox/index.js","./exports/FlatList":"../node_modules/react-native-web/dist/exports/FlatList/index.js","./exports/Image":"../node_modules/react-native-web/dist/exports/Image/index.js","./exports/ImageBackground":"../node_modules/react-native-web/dist/exports/ImageBackground/index.js","./exports/KeyboardAvoidingView":"../node_modules/react-native-web/dist/exports/KeyboardAvoidingView/index.js","./exports/ListView":"../node_modules/react-native-web/dist/exports/ListView/index.js","./exports/Modal":"../node_modules/react-native-web/dist/exports/Modal/index.js","./exports/Picker":"../node_modules/react-native-web/dist/exports/Picker/index.js","./exports/ProgressBar":"../node_modules/react-native-web/dist/exports/ProgressBar/index.js","./exports/RefreshControl":"../node_modules/react-native-web/dist/exports/RefreshControl/index.js","./exports/SafeAreaView":"../node_modules/react-native-web/dist/exports/SafeAreaView/index.js","./exports/ScrollView":"../node_modules/react-native-web/dist/exports/ScrollView/index.js","./exports/SectionList":"../node_modules/react-native-web/dist/exports/SectionList/index.js","./exports/Slider":"../node_modules/react-native-web/dist/exports/Slider/index.js","./exports/StatusBar":"../node_modules/react-native-web/dist/exports/StatusBar/index.js","./exports/SwipeableFlatList":"../node_modules/react-native-web/dist/exports/SwipeableFlatList/index.js","./exports/SwipeableListView":"../node_modules/react-native-web/dist/exports/SwipeableListView/index.js","./exports/Switch":"../node_modules/react-native-web/dist/exports/Switch/index.js","./exports/Text":"../node_modules/react-native-web/dist/exports/Text/index.js","./exports/TextInput":"../node_modules/react-native-web/dist/exports/TextInput/index.js","./exports/Touchable":"../node_modules/react-native-web/dist/exports/Touchable/index.js","./exports/TouchableHighlight":"../node_modules/react-native-web/dist/exports/TouchableHighlight/index.js","./exports/TouchableNativeFeedback":"../node_modules/react-native-web/dist/exports/TouchableNativeFeedback/index.js","./exports/TouchableOpacity":"../node_modules/react-native-web/dist/exports/TouchableOpacity/index.js","./exports/TouchableWithoutFeedback":"../node_modules/react-native-web/dist/exports/TouchableWithoutFeedback/index.js","./exports/View":"../node_modules/react-native-web/dist/exports/View/index.js","./exports/VirtualizedList":"../node_modules/react-native-web/dist/exports/VirtualizedList/index.js","./exports/YellowBox":"../node_modules/react-native-web/dist/exports/YellowBox/index.js","./exports/ColorPropType":"../node_modules/react-native-web/dist/exports/ColorPropType/index.js","./exports/EdgeInsetsPropType":"../node_modules/react-native-web/dist/exports/EdgeInsetsPropType/index.js","./exports/PointPropType":"../node_modules/react-native-web/dist/exports/PointPropType/index.js","./exports/DatePickerIOS":"../node_modules/react-native-web/dist/exports/DatePickerIOS/index.js","./exports/DrawerLayoutAndroid":"../node_modules/react-native-web/dist/exports/DrawerLayoutAndroid/index.js","./exports/ImageEditor":"../node_modules/react-native-web/dist/exports/ImageEditor/index.js","./exports/ImageStore":"../node_modules/react-native-web/dist/exports/ImageStore/index.js","./exports/InputAccessoryView":"../node_modules/react-native-web/dist/exports/InputAccessoryView/index.js","./exports/MaskedViewIOS":"../node_modules/react-native-web/dist/exports/MaskedViewIOS/index.js","./exports/NavigatorIOS":"../node_modules/react-native-web/dist/exports/NavigatorIOS/index.js","./exports/PickerIOS":"../node_modules/react-native-web/dist/exports/PickerIOS/index.js","./exports/ProgressBarAndroid":"../node_modules/react-native-web/dist/exports/ProgressBarAndroid/index.js","./exports/ProgressViewIOS":"../node_modules/react-native-web/dist/exports/ProgressViewIOS/index.js","./exports/SegmentedControlIOS":"../node_modules/react-native-web/dist/exports/SegmentedControlIOS/index.js","./exports/SnapshotViewIOS":"../node_modules/react-native-web/dist/exports/SnapshotViewIOS/index.js","./exports/TabBarIOS":"../node_modules/react-native-web/dist/exports/TabBarIOS/index.js","./exports/ToastAndroid":"../node_modules/react-native-web/dist/exports/ToastAndroid/index.js","./exports/ToolbarAndroid":"../node_modules/react-native-web/dist/exports/ToolbarAndroid/index.js","./exports/ViewPagerAndroid":"../node_modules/react-native-web/dist/exports/ViewPagerAndroid/index.js","./exports/WebView":"../node_modules/react-native-web/dist/exports/WebView/index.js","./exports/ActionSheetIOS":"../node_modules/react-native-web/dist/exports/ActionSheetIOS/index.js","./exports/AlertIOS":"../node_modules/react-native-web/dist/exports/AlertIOS/index.js","./exports/CameraRoll":"../node_modules/react-native-web/dist/exports/CameraRoll/index.js","./exports/DatePickerAndroid":"../node_modules/react-native-web/dist/exports/DatePickerAndroid/index.js","./exports/ImagePickerIOS":"../node_modules/react-native-web/dist/exports/ImagePickerIOS/index.js","./exports/PermissionsAndroid":"../node_modules/react-native-web/dist/exports/PermissionsAndroid/index.js","./exports/PushNotificationIOS":"../node_modules/react-native-web/dist/exports/PushNotificationIOS/index.js","./exports/Settings":"../node_modules/react-native-web/dist/exports/Settings/index.js","./exports/StatusBarIOS":"../node_modules/react-native-web/dist/exports/StatusBarIOS/index.js","./exports/Systrace":"../node_modules/react-native-web/dist/exports/Systrace/index.js","./exports/TimePickerAndroid":"../node_modules/react-native-web/dist/exports/TimePickerAndroid/index.js","./exports/TVEventHandler":"../node_modules/react-native-web/dist/exports/TVEventHandler/index.js","./exports/VibrationIOS":"../node_modules/react-native-web/dist/exports/VibrationIOS/index.js","./exports/DeviceEventEmitter":"../node_modules/react-native-web/dist/exports/DeviceEventEmitter/index.js"}],"../src/nativeObserver.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.nativeObserve = void 0;
+
+var _reactNative = require("react-native");
+
+var nativeObserve = function nativeObserve(ref, wasVisible, setIsVisible) {
+  ref.measure(function (_x, _y, width, height, pageX, pageY) {
+    var state = {
+      rectTop: pageY,
+      rectBottom: pageY + height,
+      rectWidth: pageX + width
+    };
+
+    var window = _reactNative.Dimensions.get('screen');
+
+    var isVisible = state.rectBottom !== 0 && state.rectTop >= 0 && state.rectBottom <= window.height && state.rectWidth > 0 && state.rectWidth <= window.width;
+
+    if (wasVisible !== isVisible) {
+      setIsVisible(function () {
+        return isVisible;
+      });
+    }
+  });
+};
+
+exports.nativeObserve = nativeObserve;
+},{"react-native":"../node_modules/react-native-web/dist/index.js"}],"../src/observer.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.observe = void 0;
+
+var _nativeObserver = require("./nativeObserver");
+
+var observe = function observe(ref, isVisible, setIsVisible) {
+  (0, _nativeObserver.nativeObserve)(ref, isVisible, setIsVisible);
+};
+
+exports.observe = observe;
+},{"./nativeObserver":"../src/nativeObserver.tsx"}],"../src/index.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.useIsInViewPortEffect = useIsInViewPortEffect;
-exports.Thing = void 0;
 
 var _tslib = require("tslib");
 
-var React = _interopRequireWildcard(require("react"));
+var _react = require("react");
 
-var _reactNative = require("react-native");
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-var Thing = function Thing() {
-  return React.createElement(_reactNative.View, null, React.createElement(_reactNative.Text, null, "the snozzberries taste like snozzberries"));
-};
-
-exports.Thing = Thing;
+var _observer = require("./observer");
 
 function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
   if (onVisible === void 0) {
@@ -68404,22 +68439,22 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
     delay = 500;
   }
 
-  var _a = (0, React.useState)(null),
+  var _a = (0, _react.useState)(null),
       interval = _a[0],
       setVPInverval = _a[1];
 
-  var _b = (0, React.useState)(false),
+  var _b = (0, _react.useState)(false),
       isVisible = _b[0],
       setIsVisible = _b[1];
 
-  var clear = (0, React.useCallback)(function () {
+  var clear = (0, _react.useCallback)(function () {
     if (interval) {
       clearInterval(interval);
     }
 
     setInterval(null);
-  }, []);
-  (0, React.useLayoutEffect)(function () {
+  }, [interval]);
+  (0, _react.useLayoutEffect)(function () {
     if (disabled) {
       return clear;
     }
@@ -68429,23 +68464,19 @@ function useIsInViewPortEffect(ref, onVisible, dependencies, disabled, delay) {
         return;
       }
 
-      observe(ref.current, isVisible, setIsVisible);
-    }));
-  }, delay);
-  ;
-  return clear;
+      (0, _observer.observe)(ref.current, isVisible, setIsVisible);
+    }, delay));
+    return clear;
+  }, (0, _tslib.__spreadArrays)([ref, disabled, delay, isVisible], dependencies));
+  (0, _react.useEffect)(function () {
+    if (isVisible) {
+      var effect = onVisible();
+      return effect;
+    }
+  }, [isVisible]);
+  return isVisible;
 }
-
-(0, _tslib.__spreadArrays)([ref, disabled, delay], dependencies);
-;
-(0, React.useEffect)(function () {
-  if (isVisible) {
-    var effect = onVisible();
-    return effect;
-  }
-}, [isVisible]);
-return isVisible;
-},{"tslib":"../node_modules/tslib/tslib.es6.js","react":"../node_modules/react/index.js","react-native":"../node_modules/react-native-web/dist/index.js"}],"index.tsx":[function(require,module,exports) {
+},{"tslib":"../node_modules/tslib/tslib.es6.js","react":"../node_modules/react/index.js","./observer":"../src/observer.tsx"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {
@@ -68476,7 +68507,7 @@ var react_native_1 = require("react-native");
 
 var App = function App() {
   var arr = new Array(100).fill(1);
-  return React.createElement(react_native_1.ScrollView, null, React.createElement(src_1.Thing, null), arr.map(function (e, i) {
+  return React.createElement(react_native_1.ScrollView, null, arr.map(function (e, i) {
     return React.createElement("div", {
       key: "key" + i
     }, i);
@@ -68529,7 +68560,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54203" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53456" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

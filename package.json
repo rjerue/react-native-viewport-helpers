@@ -2,12 +2,20 @@
   "name": "react-native-viewport-helpers",
   "license": "MIT",
   "repository": "https://github.com/rjerue/react-native-viewport-helpers",
-  "version": "0.1.2",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "react-native",
+    "viewport",
+    "in view",
+    "hook"
+  ],
   "main": "index.js",
   "module": "dist/react-native-viewport-helpers.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "target"
   ],
   "scripts": {
     "start": "tsdx watch",

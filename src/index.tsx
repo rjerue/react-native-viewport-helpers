@@ -9,26 +9,30 @@ import {
 } from 'react';
 import { observe } from './observer';
 
+/**
+ * Hook to run when ref is in view
+ * @param ref Ref to be in view
+ * @param onVisible Effect to run when in view
+ * @param dependencies Dependencies for the hook
+ * @param delay delay to poll on, by default 500ms
+ */
 export function useIsInViewPortEffect(
   ref: React.MutableRefObject<View | HTMLDivElement | null>,
   onVisible: EffectCallback = () => {},
   dependencies: any[] = [],
-  disabled = false,
   delay = 500
 ) {
-  const [interval, setVPInverval] = useState<NodeJS.Timeout | null>(null);
+  const [interval, setVPInterval] = useState<NodeJS.Timeout | null>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const clear = useCallback(() => {
     if (interval) {
       clearInterval(interval);
     }
-    setInterval(null);
-  }, []);
+    setVPInterval(null);
+  }, [interval]);
+
   useLayoutEffect(() => {
-    if (disabled) {
-      return clear;
-    }
-    setVPInverval(
+    setVPInterval(
       setInterval(() => {
         if (!ref.current) {
           return;
@@ -37,7 +41,7 @@ export function useIsInViewPortEffect(
       }, delay)
     );
     return clear;
-  }, [ref, disabled, delay, ...dependencies]);
+  }, [ref, delay, isVisible, ...dependencies]);
 
   useEffect(() => {
     if (isVisible) {

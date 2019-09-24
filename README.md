@@ -1,12 +1,64 @@
-# TSDX React User Guide
+## react-native-viewport-helpers
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
+### Install
 
-> This TSDX setup is meant for developing React components (not apps!) that can be published to NPM. If you’re looking to build an app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
+`yarn add react-native-viewport-helpers` or `npn install react-native-viewport-helpers`
 
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+## Usage
 
-## Commands
+Works like a regular useLayoutEffect hook.
+
+Takes in a `ref`from `useRef`. An `effect function` that works just like useEffect meaning a cleanup can be returned. `Dependencies` for the effect, and a `delay` that is by default 500ms.
+
+This works through polling, so it's not the most performance friendly thing, but it works.
+
+```js
+import * as React from 'react';
+import { useIsInViewPortEffect } from 'react-native-viewport-helpers';
+import { useRef } from 'react';
+import { View, Text, ScrollView } from 'react-native';
+
+const App = () => {
+  const arr = new Array(100).fill(1);
+  return (
+    <ScrollView>
+      {arr.map((e, i) => (
+        <div key={`key${i}`}>{i}</div>
+      ))}
+      <Component />
+      {arr.map((e, i) => (
+        <div key={`key${i}`}>{i}</div>
+      ))}
+    </ScrollView>
+  );
+};
+
+const Component = () => {
+  const ref = useRef < any > null;
+  useIsInViewPortEffect(
+    ref,
+    () => {
+      console.log('Hello World');
+      return () => {
+        console.log('goodbye!');
+      };
+    },
+    [],
+    2000
+  );
+  return (
+    <View ref={ref}>
+      <Text>Hello</Text>
+    </View>
+  );
+};
+```
+
+## TSDX
+
+This was made with TSDX + a few changes, readme for that below
+
+### Commands
 
 TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
 
@@ -32,15 +84,15 @@ To do a one-off build, use `npm run build` or `yarn build`.
 
 To run tests, use `npm test` or `yarn test`.
 
-## Configuration
+### Configuration
 
 Code quality is [set up for you](https://github.com/palmerhq/tsdx/pull/45/files) with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
 
-### Jest
+#### Jest
 
 Jest tests are set up to run with `npm test` or `yarn test`. This runs the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
 
-#### Setup Files
+###### Setup Files
 
 This is the folder structure we set up for you:
 
@@ -60,29 +112,29 @@ README.md         # EDIT THIS
 tsconfig.json
 ```
 
-#### React Testing Library
+###### React Testing Library
 
 We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
 
-### Rollup
+#### Rollup
 
 TSDX uses [Rollup v1.x](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
 
-### TypeScript
+#### TypeScript
 
 `tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
 
-## Continuous Integration
+### Continuous Integration
 
-### Travis
-
-_to be completed_
-
-### Circle
+#### Travis
 
 _to be completed_
 
-## Optimizations
+#### Circle
+
+_to be completed_
+
+### Optimizations
 
 Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
 
@@ -98,13 +150,13 @@ if (__DEV__) {
 
 You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
 
-## Module Formats
+### Module Formats
 
 CJS, ESModules, and UMD module formats are supported.
 
 The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
 
-## Using the Playground
+### Using the Playground
 
 ```
 cd example
@@ -114,7 +166,7 @@ npm start # or yarn start
 
 The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**!
 
-## Deploying the Playground
+### Deploying the Playground
 
 The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
 
@@ -133,21 +185,21 @@ netlify init
 # pick yes for netlify.toml
 ```
 
-## Named Exports
+### Named Exports
 
 Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
 
-## Including Styles
+### Including Styles
 
 There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
 
 For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
 
-## Publishing to NPM
+### Publishing to NPM
 
 We recommend using https://github.com/sindresorhus/np.
 
-## Usage with Lerna
+### Usage with Lerna
 
 When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
 
