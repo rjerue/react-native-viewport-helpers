@@ -2,7 +2,7 @@
   "name": "react-native-viewport-helpers",
   "license": "MIT",
   "repository": "https://github.com/rjerue/react-native-viewport-helpers",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "module": "dist/react-native-viewport-helpers.esm.js",
   "typings": "dist/index.d.ts",
